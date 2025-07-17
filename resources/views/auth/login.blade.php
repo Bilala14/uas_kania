@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,8 +8,9 @@
   <link rel="stylesheet" href="{{ asset('/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
   <link rel="stylesheet" href="{{ asset('/assets/vendors/css/vendor.bundle.base.css') }}">
   <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
-  <link rel="shortcut icon" href="{{ asset('/assets/images/favicon.png') }}"/>
+  <link rel="shortcut icon" href="{{ asset('/assets/images/favicon.png') }}" />
 </head>
+
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -20,8 +22,8 @@
 
               <!-- Pesan error jika login gagal -->
               @if(session('error'))
-                <div class="alert alert-danger">{{ session('error') }}</div>
-              @endif
+          <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
 
               <form method="POST" action="{{ route('login') }}">
                 @csrf
@@ -70,4 +72,5 @@
   <script src="{{ asset('/assets/js/settings.js') }}"></script>
   <script src="{{ asset('/assets/js/todolist.js') }}"></script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,14 +14,19 @@
   <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
+
 <body>
   <div class="container-scroller">
     <!-- Sidebar -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
         <a class="sidebar-brand brand-logo" href="#"><img src="{{ asset('assets/images/logo.svg') }}" alt="logo" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="#"><img src="{{ asset('assets/images/logo-mini.svg') }}" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini" href="#"><img src="{{ asset('assets/images/logo-mini.svg') }}"
+            alt="logo" /></a>
       </div>
       <ul class="nav">
         <li class="nav-item profile">
@@ -32,10 +38,10 @@
               </div>
               <div class="profile-name">
                 @auth
-                  <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
-                @else
-                  <h5 class="mb-0 font-weight-normal">Guest</h5>
-                @endauth
+          <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
+        @else
+          <h5 class="mb-0 font-weight-normal"></h5>
+        @endauth
                 <span>Gold Member</span>
               </div>
             </div>
@@ -69,7 +75,8 @@
       <!-- Navbar -->
       <nav class="navbar p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo-mini" href="#"><img src="{{ asset('assets/images/logo-mini.svg') }}" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="#"><img src="{{ asset('assets/images/logo-mini.svg') }}"
+              alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -91,15 +98,16 @@
                   <img class="img-xs rounded-circle" src="{{ asset('assets/images/faces/face15.jpg') }}" alt="">
                   <p class="mb-0 d-none d-sm-block navbar-profile-name">
                     @auth
-                      {{ Auth::user()->name }}
-                    @else
-                      Guest
-                    @endauth
+            {{ Auth::user()->name }}
+          @else
+            Guest
+          @endauth
                   </p>
                   <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                 </div>
               </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                aria-labelledby="profileDropdown">
                 <h6 class="p-3 mb-0">Profile</h6>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
@@ -133,34 +141,38 @@
       </nav>
 
       <!-- Main panel -->
-<div class="main-panel">
-  <div class="content-wrapper">
-    @yield('content') {{-- INI YANG PENTING UNTUK MENAMPILKAN ISI HALAMAN --}}
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com</span>
-      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-        Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a>
-      </span>
-    </div>
-  </footer>
-</div>
-
+      <div class="main-panel">
+        <div class="content-wrapper">
+          @yield('content') {{-- INI YANG PENTING UNTUK MENAMPILKAN ISI HALAMAN --}}
+        </div>
 
         <!-- Footer -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com</span>
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
+              bootstrapdash.com</span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-              Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a>
+              Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin
+                templates</a>
             </span>
           </div>
         </footer>
       </div>
+
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
+            bootstrapdash.com</span>
+          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+            Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin
+              templates</a>
+          </span>
+        </div>
+      </footer>
     </div>
+  </div>
   </div>
 
   <!-- JS scripts -->
@@ -171,4 +183,5 @@
   <script src="{{ asset('assets/js/settings.js') }}"></script>
   <script src="{{ asset('assets/js/todolist.js') }}"></script>
 </body>
+
 </html>

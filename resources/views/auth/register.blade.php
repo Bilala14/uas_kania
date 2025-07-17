@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -10,6 +11,7 @@
   <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
   <link rel="shortcut icon" href="{{ asset('/assets/images/favicon.png') }}">
 </head>
+
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -46,11 +48,11 @@
                   <button type="submit" class="btn btn-primary btn-block enter-btn">Register</button>
                 </div>
 
-                <p class="sign-up text-center mt-3">Already have an Account? 
+                <p class="sign-up text-center mt-3">Already have an Account?
                   <a href="{{ route('login') }}">Login</a>
                 </p>
               </form>
-              
+
             </div>
           </div>
         </div>
@@ -66,4 +68,5 @@
   <script src="{{ asset('/assets/js/settings.js') }}"></script>
   <script src="{{ asset('/assets/js/todolist.js') }}"></script>
 </body>
+
 </html>

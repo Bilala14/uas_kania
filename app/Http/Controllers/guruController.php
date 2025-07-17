@@ -10,6 +10,7 @@ class guruController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         // menampilkan data guru
@@ -91,3 +92,4 @@ class guruController extends Controller
         return redirect('/guru');
     }
 }
+

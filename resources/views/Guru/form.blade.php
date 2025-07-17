@@ -1,57 +1,64 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Form Tambah Data</div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Form Tambah Data</div>
 
-                <div class="card-body">
-                    <form method="post" action="/guru" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                        <label for="nip">NIP</label>
-                        <input type="text" name="nip" class="form-control" value="{{ old('nip', $guru->nip) }}" required>
-                        </div>
+                    <div class="card-body">
+                        <form method="post" action="/guru" enctype="multipart/form-data">
+                            @csrf
 
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Nama Lengkap</label>
-                            <input type="text" name="nama" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Bidang Studi</label>
-                            <select name="bidang" id="" class="form-control">
-                                <option value="">-Pilih Bidang Studi-</option>
-                                <option value="PAI">PAI</option>
-                                <option value="MATEMATIKA">MATEMATIKA</option>
-                                <option value="BAHASA INDONESIA">BAHASA INDONESIA</option>
-                                <option value="BAHASA INGGRIS">BAHASA INGGRIS</option>
-                                <option value="PJOK">PJOK</option>
-                                <option value="MULOK">MULOK</option>
-                                <option value="IPAS">IPAS</option>
-                            </select>
-                        </div>
-                        <select name="wali_kelas" class="form-control">
-                            <option value="">-- Wali Kelas? --</option>
-                            <option value="Ya">Ya</option>
-                            <option value="Tidak">Tidak</option>
-                            </select>
+                            <div class="form-group mb-3">
+                                <label for="nip">NIP</label>
+                                <input type="text" name="nip" class="form-control" value="{{ old('nip') }}" required>
+                            </div>
 
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">No Handphone</label>
-                            <input type="nohp" name="nohp" class="form-control" id="exampleInputPassword1">
-                        </div>
+                            <div class="form-group mb-3">
+                                <label for="nama">Nama Lengkap</label>
+                                <input type="text" name="nama" class="form-control" value="{{ old('nama') }}" required>
+                            </div>
 
-                        <button type="submit" class="btn btn-primary">Tambah</button>
-                    </form>
+                            <div class="form-group mb-3">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" class="form-control" value="{{ old('email') }}">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="bidang">Bidang Studi</label>
+                                <select name="bidang" class="form-control" required>
+                                    <option value="">- Pilih Bidang Studi -</option>
+                                    @foreach(['PAI', 'MATEMATIKA', 'BAHASA INDONESIA', 'BAHASA INGGRIS', 'PJOK', 'MULOK', 'IPAS'] as $bid)
+                                        <option value="{{ $bid }}" {{ old('bidang') == $bid ? 'selected' : '' }}>{{ $bid }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="wali_kelas">Wali Kelas</label>
+                                <select name="wali_kelas" class="form-control" required>
+                                    <option value="">-- Wali Kelas? --</option>
+                                    <option value="Ya" {{ old('wali_kelas') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                    <option value="Tidak" {{ old('wali_kelas') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="nohp">No Handphone</label>
+                                <input type="text" name="nohp" class="form-control" value="{{ old('nohp') }}">
+                            </div>
+
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-primary">Tambah</button>
+                                <a href="{{ url('/guru') }}" class="btn btn-secondary">Batal</a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
