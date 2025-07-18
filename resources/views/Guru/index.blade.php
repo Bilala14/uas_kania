@@ -20,6 +20,7 @@
           <th>No</th>
           <th>NIP</th>
           <th>Nama</th>
+          <th>Jenis Kelamin</th>
           <th>Email</th>
           <th>Aksi</th>
           </tr>
@@ -30,6 +31,7 @@
         <td>{{ $nomor++ }}</td>
         <td>{{ $data->nip }}</td>
         <td>{{ $data->nama }}</td>
+        <td>{{ $data->jk }}</td>
         <td>{{ $data->email }}</td>
         <td>
 
@@ -51,6 +53,7 @@
           <div class="modal-body">
           <div class="mb-4"><strong>Nama:</strong> {{ $data->nama }}</div>
           <div class="mb-4"><strong>NIP:</strong> {{ $data->nip }}</div>
+          <div class="mb-4"><strong>Jenis Kelamin:</strong> {{ $data->jk }}</div>
           <div class="mb-4"><strong>Email:</strong> {{ $data->email }}</div>
           <div class="mb-4"><strong>Bidang:</strong> {{ $data->bidang }}</div>
           <div class="mb-4"><strong>No HP:</strong> {{ $data->nohp }}</div>

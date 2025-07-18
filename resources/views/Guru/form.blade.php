@@ -20,6 +20,14 @@
                                 <label for="nama">Nama Lengkap</label>
                                 <input type="text" name="nama" class="form-control" value="{{ old('nama') }}" required>
                             </div>
+                            <div class="mb-3">
+                                <label for="jk" class="form-label">Jenis Kelamin</label>
+                                <select name="jk" id="jk" class="form-select" required>
+                                    <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                                    <option value="Laki-laki">Laki-laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>
+                            </div>
 
                             <div class="form-group mb-3">
                                 <label for="email">Email</label>

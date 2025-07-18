@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" c ontent="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Corona Admin</title>
+  <title>Schedura Admin</title>
 
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">
@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </head>
 
 <body>
@@ -38,10 +37,10 @@
               </div>
               <div class="profile-name">
                 @auth
-          <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
-        @else
-          <h5 class="mb-0 font-weight-normal"></h5>
-        @endauth
+                  <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
+                @else
+                  <h5 class="mb-0 font-weight-normal"></h5>
+                @endauth
                 <span>Gold Member</span>
               </div>
             </div>
@@ -54,6 +53,20 @@
           <a class="nav-link" href="guru">
             <span class="menu-icon"><i class="mdi mdi-view-dashboard"></i></span>
             <span class="menu-title">Guru</span>
+          </a>
+        </li>
+
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="{{ url('/kelas') }}">
+            <span class="menu-icon"><i class="mdi mdi-book-open-page-variant"></i></span>
+            <span class="menu-title">Kelas</span>
+          </a>
+        </li>
+
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="{{ url('/jadwal') }}">
+            <span class="menu-icon"><i class="mdi mdi-calendar-clock"></i></span>
+            <span class="menu-title">Jadwal</span>
           </a>
         </li>
 
@@ -98,16 +111,15 @@
                   <img class="img-xs rounded-circle" src="{{ asset('assets/images/faces/face15.jpg') }}" alt="">
                   <p class="mb-0 d-none d-sm-block navbar-profile-name">
                     @auth
-            {{ Auth::user()->name }}
-          @else
-            Guest
-          @endauth
+                      {{ Auth::user()->name }}
+                    @else
+                      Guest
+                    @endauth
                   </p>
                   <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                 </div>
               </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                aria-labelledby="profileDropdown">
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
                 <h6 class="p-3 mb-0">Profile</h6>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
@@ -143,6 +155,14 @@
       <!-- Main panel -->
       <div class="main-panel">
         <div class="content-wrapper">
+          <!-- Tulisan Selamat Datang -->
+          <div class="row mb-4">
+            <div class="col-12 text-center">
+              <h2 class="fw-bold">Selamat datang di <span class="text-primary">Schedura</span> 🎉</h2>
+              <p class="text-muted">Sistem Informasi Penjadwalan Guru dan Kelas</p>
+            </div>
+          </div>
+
           @yield('content') {{-- INI YANG PENTING UNTUK MENAMPILKAN ISI HALAMAN --}}
         </div>
 
@@ -151,25 +171,10 @@
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
               bootstrapdash.com</span>
-            
           </div>
         </footer>
       </div>
-
-
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
-            bootstrapdash.com</span>
-          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-            Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin
-              templates</a>
-          </span>
-        </div>
-      </footer>
     </div>
-  </div>
   </div>
 
   <!-- JS scripts -->

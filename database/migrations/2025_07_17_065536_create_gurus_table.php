@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('nip')->unique();
             $table->string('nama', 100);
+            $table->string('jk', 100);
             $table->string('email', 100);
             $table->string('bidang', 100);
             $table->string('nohp', 100);

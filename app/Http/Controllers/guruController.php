@@ -37,6 +37,7 @@ class guruController extends Controller
         $guru = new Guru;
         $guru->nip = $request->nip;
         $guru->nama = $request->nama;
+        $guru->jk = $request->jk;
         $guru->email = $request->email;
         $guru->bidang = $request->bidang;
         $guru->nohp = $request->nohp;
@@ -72,6 +73,7 @@ class guruController extends Controller
         $guru = Guru::find($id);
         $guru->nip = $request->nip;
         $guru->nama = $request->nama;
+        $guru->jk = $request->jk;
         $guru->email = $request->email;
         $guru->bidang = $request->bidang;
         $guru->nohp = $request->nohp;
