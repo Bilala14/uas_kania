@@ -51,13 +51,22 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-          <div class="mb-4"><strong>Nama:</strong> {{ $data->nama }}</div>
-          <div class="mb-4"><strong>NIP:</strong> {{ $data->nip }}</div>
-          <div class="mb-4"><strong>Jenis Kelamin:</strong> {{ $data->jk }}</div>
-          <div class="mb-4"><strong>Email:</strong> {{ $data->email }}</div>
-          <div class="mb-4"><strong>Bidang:</strong> {{ $data->bidang }}</div>
-          <div class="mb-4"><strong>No HP:</strong> {{ $data->nohp }}</div>
+          <div class="d-flex gap-3">
+          <img src="{{ asset('foto/' . ($data->foto ?? 'default.jpg')) }}"
+            onerror="this.onerror=null; this.src='{{ asset('foto/default.jpg') }}';" alt="Foto Guru"
+            style="width: 100px; height: 100px; object-fit: cover; border-radius: 20px; border: 1px solid #ccc;">
+
+          <div>
+            <div class="mb-2"><strong>Nama:</strong> {{ $data->nama }}</div>
+            <div class="mb-2"><strong>NIP:</strong> {{ $data->nip }}</div>
+            <div class="mb-2"><strong>Jenis Kelamin:</strong> {{ $data->jk }}</div>
+            <div class="mb-2"><strong>Email:</strong> {{ $data->email }}</div>
+            <div class="mb-2"><strong>Bidang:</strong> {{ $data->bidang }}</div>
+            <div class="mb-2"><strong>No HP:</strong> {{ $data->nohp }}</div>
           </div>
+          </div>
+          </div>
+
 
           </div>
         </div>

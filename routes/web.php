@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\guruController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\JadwalController; // Tambahkan ini
+use App\Http\Controllers\HomeController;
 
 // Jika akses langsung ke root, arahkan ke login
 Route::get('/', function () {
@@ -18,6 +19,7 @@ Route::get('/cektemplate', function () {
 
 // Default auth routes (login, register, logout)
 Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Data Guru
 Route::get('/guru', [guruController::class, 'index']);
